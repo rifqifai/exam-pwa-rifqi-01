@@ -74,6 +74,12 @@ module.exports = withPWA({
             loader: 'graphql-tag/loader',
         });
 
+        config.module.rules.push({
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            use: ['@svgr/webpack'],
+        });
+
         return config;
     },
     // generateInDevMode: true, // please comment if develop to production
