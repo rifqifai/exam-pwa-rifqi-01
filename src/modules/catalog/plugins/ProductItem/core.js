@@ -445,7 +445,9 @@ const ProductItem = (props) => {
                         </Button>
                     </Show>
                     <Show when={showWishlist || showProductCompare}>
-                        <div className="flex-row gap-1 hidden tablet:flex desktop:flex absolute top-[-55px] -translate-x-2/4 left-2/4 invisible group-hover/action:visible">
+                        <div className="flex-row gap-1 hidden tablet:flex desktop:flex absolute top-[-55px]
+                        -translate-x-2/4 left-2/4 invisible group-hover/action:visible"
+                        >
                             <Show when={showWishlist && !usedInWishlist}>
                                 <Button
                                     iconOnly
@@ -534,7 +536,11 @@ const ProductItem = (props) => {
                         ) : null}
                         {isOos && (
                             <div className={classNames('absolute top-2 tablet:top-3 left-2 tablet:left-3 z-10')}>
-                                <Badge bold label={stockStatus.replace(/_/g, ' ')} className="!bg-neutral-50 text-neutral-400 !text-xs tablet:!text-sm" />
+                                <Badge
+                                    bold
+                                    label={stockStatus.replace(/_/g, ' ')}
+                                    className="!bg-neutral-50 text-neutral-400 !text-xs tablet:!text-sm"
+                                />
                             </div>
                         )}
                         {showQuickView && (
